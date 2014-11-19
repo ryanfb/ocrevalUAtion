@@ -140,7 +140,7 @@ public enum FileType {
         } else if (name.endsWith(".html")) {
             try {
                 org.jsoup.nodes.Document doc = org.jsoup.Jsoup.parse(file, null);
-                if (!doc.head().select("meta[name=ocr-system").isEmpty()) {
+                if (!doc.head().select("meta[name=ocr-id]").isEmpty()) {
                     return HOCR;
                 }
             } catch (IOException ex) {
